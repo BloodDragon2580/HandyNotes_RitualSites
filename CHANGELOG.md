@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1
+
+- Adds Daggerspine Point challenge unlock markers for Malevolent Boons obelisks and the Tainted Bone Pile.
+- Adds Void-Touched Chick egg route markers for the drifting egg collectible.
+- Adds the newly listed Daggerspine Point rustling thicket location from Wowhead.
+
 ## 1.2.0
 
 - Adds Broken Throne (`2585`) Ritual Site markers for fixed reward and challenge unlock points.

@@ -9,6 +9,8 @@ local MAP_DAGGERSPINE_POINT = 2594
 local MAP_BROKEN_THRONE = 2585
 local CATEGORY_SEAWEED = "seaweed"
 local CATEGORY_LYNX = "lynx"
+local CATEGORY_DAGGERSPINE_CHICK = "daggerspineChick"
+local CATEGORY_DAGGERSPINE_CHALLENGES = "daggerspineChallenges"
 local CATEGORY_BROKEN_THRONE_REWARDS = "brokenThroneRewards"
 local CATEGORY_BROKEN_THRONE_CHALLENGES = "brokenThroneChallenges"
 local DEFAULT_LOCALE = "enUS"
@@ -35,6 +37,10 @@ local TRANSLATIONS = {
         ["Show washed-up seaweed and the soggy nest."] = "Show washed-up seaweed and the soggy nest.",
         ["Show void-touched lynx thickets"] = "Show void-touched lynx thickets",
         ["Show rustling hidden thickets for the void-touched lynx collectible."] = "Show rustling hidden thickets for the void-touched lynx collectible.",
+        ["Show void-touched chick egg"] = "Show void-touched chick egg",
+        ["Show the drifting egg route for the void-touched chick collectible."] = "Show the drifting egg route for the void-touched chick collectible.",
+        ["Show Daggerspine challenge unlocks"] = "Show Daggerspine challenge unlocks",
+        ["Show Malevolent Boons obelisks and the tainted bone pile in Daggerspine Point."] = "Show Malevolent Boons obelisks and the tainted bone pile in Daggerspine Point.",
         ["Show Broken Throne rewards"] = "Show Broken Throne rewards",
         ["Show fixed Broken Throne collectible and reward points."] = "Show fixed Broken Throne collectible and reward points.",
         ["Show Broken Throne challenge unlocks"] = "Show Broken Throne challenge unlocks",
@@ -47,6 +53,12 @@ local TRANSLATIONS = {
         ["Use the soggy lynx toy here to obtain the void-corrupted poisonfin pet."] = "Use the soggy lynx toy here to obtain the void-corrupted poisonfin pet.",
         ["Rustling Hidden Thicket"] = "Rustling Hidden Thicket",
         ["Click the thicket repeatedly until the void-touched lynx kitten becomes interactable."] = "Click the thicket repeatedly until the void-touched lynx kitten becomes interactable.",
+        ["Void-Touched Chick Egg"] = "Void-Touched Chick Egg",
+        ["The egg can spawn near the waterfall, then drift down the river and around the coast."] = "The egg can spawn near the waterfall, then drift down the river and around the coast.",
+        ["Void-Touched Chick Egg Route"] = "Void-Touched Chick Egg Route",
+        ["Follow the river if the egg is not at the spawn point; it can drift past this area."] = "Follow the river if the egg is not at the spawn point; it can drift past this area.",
+        ["Void-Touched Chick Egg Drift End"] = "Void-Touched Chick Egg Drift End",
+        ["The egg can drift toward this coast after leaving the river."] = "The egg can drift toward this coast after leaving the river.",
         ["Misplaced Ritual Candle"] = "Misplaced Ritual Candle",
         ["Bring this candle to the nearby ritual circle to repair the Void Eagle ritual."] = "Bring this candle to the nearby ritual circle to repair the Void Eagle ritual.",
         ["Void Eagle Ritual Site"] = "Void Eagle Ritual Site",
@@ -87,6 +99,10 @@ local TRANSLATIONS = {
         ["Show washed-up seaweed and the soggy nest."] = "显示冲上岸的海藻和湿漉漉的窝。",
         ["Show void-touched lynx thickets"] = "显示虚触山猫草丛",
         ["Show rustling hidden thickets for the void-touched lynx collectible."] = "显示虚触山猫收集用的沙沙响的隐秘草丛。",
+        ["Show void-touched chick egg"] = "显示虚触小鸡蛋",
+        ["Show the drifting egg route for the void-touched chick collectible."] = "显示虚触小鸡收集用的漂流蛋路线。",
+        ["Show Daggerspine challenge unlocks"] = "显示达斯维恩海岸挑战解锁点",
+        ["Show Malevolent Boons obelisks and the tainted bone pile in Daggerspine Point."] = "显示达斯维恩海岸的恶意赐福方尖碑和腐化骨堆。",
         ["Show Broken Throne rewards"] = "显示残破神庙奖励点",
         ["Show fixed Broken Throne collectible and reward points."] = "显示残破神庙内固定的收集和奖励点。",
         ["Show Broken Throne challenge unlocks"] = "显示残破神庙挑战解锁点",
@@ -99,6 +115,12 @@ local TRANSLATIONS = {
         ["Use the soggy lynx toy here to obtain the void-corrupted poisonfin pet."] = "在这里使用湿透的山猫玩具，可获得虚空腐化的毒鳍龙宠物。",
         ["Rustling Hidden Thicket"] = "沙沙响的隐秘草丛",
         ["Click the thicket repeatedly until the void-touched lynx kitten becomes interactable."] = "反复点击草丛，直到虚空之触山猫幼崽可互动。",
+        ["Void-Touched Chick Egg"] = "虚触小鸡蛋",
+        ["The egg can spawn near the waterfall, then drift down the river and around the coast."] = "蛋可能在瀑布附近生成，然后沿河漂下并绕到海岸附近。",
+        ["Void-Touched Chick Egg Route"] = "虚触小鸡蛋漂流路线",
+        ["Follow the river if the egg is not at the spawn point; it can drift past this area."] = "如果生成点没有看到蛋，请沿河寻找；它可能会漂过这一区域。",
+        ["Void-Touched Chick Egg Drift End"] = "虚触小鸡蛋漂流终点",
+        ["The egg can drift toward this coast after leaving the river."] = "蛋离开河道后可能会漂向这片海岸。",
         ["Misplaced Ritual Candle"] = "遗失的仪式蜡烛",
         ["Bring this candle to the nearby ritual circle to repair the Void Eagle ritual."] = "将这支蜡烛带到附近的仪式法阵，用来修复虚空雄鹰仪式。",
         ["Void Eagle Ritual Site"] = "虚空雄鹰仪式地点",
@@ -139,6 +161,10 @@ local TRANSLATIONS = {
         ["Show washed-up seaweed and the soggy nest."] = "Показывать выброшенные водоросли и Промокшее гнездо.",
         ["Show void-touched lynx thickets"] = "Шуршащий куст",
         ["Show rustling hidden thickets for the void-touched lynx collectible."] = "Показывать Шуршащие кусты для Меченного Бездной рысенка.",
+        ["Show void-touched chick egg"] = "Яйцо цыпленка Бездны",
+        ["Show the drifting egg route for the void-touched chick collectible."] = "Показывать маршрут дрейфующего яйца для питомца.",
+        ["Show Daggerspine challenge unlocks"] = "Испытания Мыса Кинжального Хребта",
+        ["Show Malevolent Boons obelisks and the tainted bone pile in Daggerspine Point."] = "Показывать обелиски Злобных даров и Оскверненную кучу костей на Мысе Кинжального Хребта.",
         ["Show Broken Throne rewards"] = "Награды Расколотого Трона",
         ["Show fixed Broken Throne collectible and reward points."] = "Показывать фиксированные точки коллекционных предметов и наград в Расколотом Троне.",
         ["Show Broken Throne challenge unlocks"] = "Испытания Расколотого Трона",
@@ -151,6 +177,12 @@ local TRANSLATIONS = {
         ["Use the soggy lynx toy here to obtain the void-corrupted poisonfin pet."] = "Используйте здесь Слюнявую рысью игрушку, чтобы получить питомца Омытый Бездной морской варан.",
         ["Rustling Hidden Thicket"] = "Шуршащий куст",
         ["Click the thicket repeatedly until the void-touched lynx kitten becomes interactable."] = "Нажимайте на куст, пока рысь не станет доступна для взаимодействия.",
+        ["Void-Touched Chick Egg"] = "Яйцо цыпленка Бездны",
+        ["The egg can spawn near the waterfall, then drift down the river and around the coast."] = "Яйцо может появиться у водопада, затем дрейфовать вниз по реке и вдоль берега.",
+        ["Void-Touched Chick Egg Route"] = "Маршрут яйца цыпленка Бездны",
+        ["Follow the river if the egg is not at the spawn point; it can drift past this area."] = "Следуйте вдоль реки, если яйца нет в точке появления; оно может проплыть через эту область.",
+        ["Void-Touched Chick Egg Drift End"] = "Конец маршрута яйца цыпленка Бездны",
+        ["The egg can drift toward this coast after leaving the river."] = "После выхода из реки яйцо может дрейфовать к этому берегу.",
         ["Misplaced Ritual Candle"] = "Потерянная ритуальная свеча",
         ["Bring this candle to the nearby ritual circle to repair the Void Eagle ritual."] = "Отнесите эту свечу к ближайшему ритуальному кругу, чтобы восстановить ритуал орла Бездны.",
         ["Void Eagle Ritual Site"] = "Место ритуала орла Бездны",
@@ -188,6 +220,8 @@ local defaults = {
     iconAlpha = 1,
     showSeaweed = true,
     showLynx = true,
+    showDaggerspineChick = true,
+    showDaggerspineChallenges = true,
     showBrokenThroneRewards = true,
     showBrokenThroneChallenges = true,
 }
@@ -199,6 +233,8 @@ local resettableDefaults = {
     iconAlpha = 1,
     showSeaweed = true,
     showLynx = true,
+    showDaggerspineChick = true,
+    showDaggerspineChallenges = true,
     showBrokenThroneRewards = true,
     showBrokenThroneChallenges = true,
 }
@@ -285,6 +321,7 @@ end
 local ICON_KELP = ItemIcon(270041, "Interface\\Icons\\INV_Misc_Herb_Seaweed")
 local ICON_NEST = "Interface\\Icons\\INV_Misc_Basket_05"
 local ICON_LYNX = ItemIcon(270063, "Interface\\Icons\\Ability_Druid_CatForm")
+local ICON_EGG = 132834
 local ICON_CANDLE = 133750
 local ICON_RITUAL = ItemIcon(269828, "Interface\\Icons\\Spell_Shadow_Rune")
 local ICON_WIND = 136018
@@ -341,6 +378,18 @@ local function AddBush(x, y)
     AddNode(MAP_DAGGERSPINE_POINT, x, y, CATEGORY_LYNX, "Rustling Hidden Thicket", "Click the thicket repeatedly until the void-touched lynx kitten becomes interactable.", ICON_LYNX, 1.1)
 end
 
+local function AddDaggerspineChick(x, y, titleKey, noteKey)
+    AddNode(MAP_DAGGERSPINE_POINT, x, y, CATEGORY_DAGGERSPINE_CHICK, titleKey, noteKey, ICON_EGG, 1.1)
+end
+
+local function AddDaggerspineChallenge(x, y, titleKey, noteKey, icon, scale, titleSuffix)
+    AddNode(MAP_DAGGERSPINE_POINT, x, y, CATEGORY_DAGGERSPINE_CHALLENGES, titleKey, noteKey, icon, scale, titleSuffix)
+end
+
+local function AddDaggerspineObelisk(index, x, y)
+    AddDaggerspineChallenge(x, y, "Malevolent Boons Obelisk", "Walk up to these obelisks for the Malevolent Boons challenge unlock.", ICON_OBELISK, 1.05, (" #%d"):format(index))
+end
+
 local function AddBrokenThroneReward(x, y, titleKey, noteKey, icon, scale)
     AddNode(MAP_BROKEN_THRONE, x, y, CATEGORY_BROKEN_THRONE_REWARDS, titleKey, noteKey, icon, scale)
 end
@@ -372,6 +421,22 @@ AddBush(63.58, 65.58)
 AddBush(42.03, 80.03)
 AddBush(41.76, 49.69)
 AddBush(43.31, 57.99)
+AddBush(43.00, 49.70)
+
+AddDaggerspineChick(74.00, 50.00, "Void-Touched Chick Egg", "The egg can spawn near the waterfall, then drift down the river and around the coast.")
+AddDaggerspineChick(65.19, 45.42, "Void-Touched Chick Egg Route", "Follow the river if the egg is not at the spawn point; it can drift past this area.")
+AddDaggerspineChick(52.30, 63.80, "Void-Touched Chick Egg Drift End", "The egg can drift toward this coast after leaving the river.")
+
+AddDaggerspineObelisk(1, 66.00, 38.00)
+AddDaggerspineObelisk(2, 64.00, 50.00)
+AddDaggerspineObelisk(3, 63.00, 70.00)
+AddDaggerspineObelisk(4, 50.00, 42.00)
+AddDaggerspineObelisk(5, 42.00, 56.00)
+AddDaggerspineObelisk(6, 62.00, 62.00)
+AddDaggerspineObelisk(7, 34.90, 63.80)
+AddDaggerspineObelisk(8, 44.80, 47.30)
+AddDaggerspineObelisk(9, 39.30, 76.10)
+AddDaggerspineChallenge(66.00, 63.00, "Tainted Bone Pile", "Loot this bone pile to start the Tainted Corpses challenge unlock quest.", ICON_BONE, 1.1)
 
 AddBrokenThroneReward(51.50, 47.80, "Misplaced Ritual Candle", "Bring this candle to the nearby ritual circle to repair the Void Eagle ritual.", ICON_CANDLE, 1.05)
 AddBrokenThroneReward(50.64, 47.42, "Void Eagle Ritual Site", "Repair the circle with the misplaced ritual candle, then start the ritual for the Void-Corrupted Hex Eagle.", ICON_RITUAL, 1.15)
@@ -393,6 +458,12 @@ local function IsCategoryEnabled(category)
     end
     if category == CATEGORY_LYNX then
         return GetOption("showLynx")
+    end
+    if category == CATEGORY_DAGGERSPINE_CHICK then
+        return GetOption("showDaggerspineChick")
+    end
+    if category == CATEGORY_DAGGERSPINE_CHALLENGES then
+        return GetOption("showDaggerspineChallenges")
     end
     if category == CATEGORY_BROKEN_THRONE_REWARDS then
         return GetOption("showBrokenThroneRewards")
@@ -580,17 +651,29 @@ local options = {
                     desc = OptionName("Show rustling hidden thickets for the void-touched lynx collectible."),
                     order = 20,
                 },
+                showDaggerspineChick = {
+                    type = "toggle",
+                    name = OptionName("Show void-touched chick egg"),
+                    desc = OptionName("Show the drifting egg route for the void-touched chick collectible."),
+                    order = 30,
+                },
+                showDaggerspineChallenges = {
+                    type = "toggle",
+                    name = OptionName("Show Daggerspine challenge unlocks"),
+                    desc = OptionName("Show Malevolent Boons obelisks and the tainted bone pile in Daggerspine Point."),
+                    order = 40,
+                },
                 showBrokenThroneRewards = {
                     type = "toggle",
                     name = OptionName("Show Broken Throne rewards"),
                     desc = OptionName("Show fixed Broken Throne collectible and reward points."),
-                    order = 30,
+                    order = 50,
                 },
                 showBrokenThroneChallenges = {
                     type = "toggle",
                     name = OptionName("Show Broken Throne challenge unlocks"),
                     desc = OptionName("Show Malevolent Boons obelisks and the tainted bone pile."),
-                    order = 40,
+                    order = 60,
                 },
             },
         },
@@ -634,6 +717,16 @@ local function ShowFilterMenu(owner)
         end, function()
             ToggleOption("showLynx")
         end)
+        rootDescription:CreateCheckbox(T("Show void-touched chick egg"), function()
+            return GetOption("showDaggerspineChick")
+        end, function()
+            ToggleOption("showDaggerspineChick")
+        end)
+        rootDescription:CreateCheckbox(T("Show Daggerspine challenge unlocks"), function()
+            return GetOption("showDaggerspineChallenges")
+        end, function()
+            ToggleOption("showDaggerspineChallenges")
+        end)
         rootDescription:CreateCheckbox(T("Show Broken Throne rewards"), function()
             return GetOption("showBrokenThroneRewards")
         end, function()
@@ -648,6 +741,8 @@ local function ShowFilterMenu(owner)
         rootDescription:CreateButton(T("Show all"), function()
             SetOption("showSeaweed", true)
             SetOption("showLynx", true)
+            SetOption("showDaggerspineChick", true)
+            SetOption("showDaggerspineChallenges", true)
             SetOption("showBrokenThroneRewards", true)
             SetOption("showBrokenThroneChallenges", true)
         end)
@@ -694,6 +789,8 @@ local function CreateMapButton()
         GameTooltip:SetText(T("HandyNotes: Ritual Sites"))
         GameTooltip:AddLine(T("Show seaweed and soggy nest"), GetOption("showSeaweed") and 0.4 or 0.8, GetOption("showSeaweed") and 1 or 0.4, 0.4)
         GameTooltip:AddLine(T("Show void-touched lynx thickets"), GetOption("showLynx") and 0.4 or 0.8, GetOption("showLynx") and 1 or 0.4, 0.4)
+        GameTooltip:AddLine(T("Show void-touched chick egg"), GetOption("showDaggerspineChick") and 0.4 or 0.8, GetOption("showDaggerspineChick") and 1 or 0.4, 0.4)
+        GameTooltip:AddLine(T("Show Daggerspine challenge unlocks"), GetOption("showDaggerspineChallenges") and 0.4 or 0.8, GetOption("showDaggerspineChallenges") and 1 or 0.4, 0.4)
         GameTooltip:AddLine(T("Show Broken Throne rewards"), GetOption("showBrokenThroneRewards") and 0.4 or 0.8, GetOption("showBrokenThroneRewards") and 1 or 0.4, 0.4)
         GameTooltip:AddLine(T("Show Broken Throne challenge unlocks"), GetOption("showBrokenThroneChallenges") and 0.4 or 0.8, GetOption("showBrokenThroneChallenges") and 1 or 0.4, 0.4)
         GameTooltip:Show()

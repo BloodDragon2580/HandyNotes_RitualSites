@@ -5,13 +5,15 @@ HandyNotes: Ritual Sites is a small World of Warcraft Retail 12.0.5 addon that a
 ## Features
 
 - Shows markers only on Ritual Site maps `2594` and `2585`.
-- Marks Daggerspine Point seaweed, soggy nest, and void-touched lynx thicket locations.
+- Marks Daggerspine Point seaweed, soggy nest, void-touched lynx thicket, void-touched chick egg, and challenge unlock locations.
 - Marks Broken Throne reward points for the Void Eagle, Chubs, and Warbear Mother collectibles.
 - Marks Broken Throne challenge unlock points for Malevolent Boons obelisks and the Tainted Bone Pile.
 - Adds a world map filter button on the Ritual Site map using the same map button column style used by modern HandyNotes plugins.
 - Lets you toggle marker categories independently:
   - Washed-up seaweed and soggy nest
   - Void-touched lynx thickets
+  - Void-touched chick egg
+  - Daggerspine Point challenge unlocks
   - Broken Throne rewards
   - Broken Throne challenge unlocks
 - Left-click a marker to set the built-in game waypoint.
@@ -47,6 +49,6 @@ The CurseForge project ID is stored in `HandyNotes_RitualSites.toc`.
 Then push a tag such as:
 
 ```bash
-git tag v1.2.0
-git push origin v1.2.0
+git tag v1.2.1
+git push origin v1.2.1
 ```
